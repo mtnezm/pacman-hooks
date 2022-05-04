@@ -1,0 +1,13 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = *
+
+[Action]
+Description = Scanning for known vulnerabilities...
+When = PostTransaction
+Depends = curl
+Depends = openssl
+Depends = arch-audit
+Exec = /usr/bin/arch-audit --color always --upgradable --quiet

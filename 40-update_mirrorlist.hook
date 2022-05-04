@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = pacman-mirrorlist
+
+[Action]
+Description = Updating mirrorlist file...
+Depends = reflector
+When = PostTransaction
+Exec = /bin/bash -c "reflector --country France --country Germany --latest 6 --sort rate --protocol https --age 24 --save /etc/pacman.d/mirrorlist && [[ -f /etc/pacman.d/mirrorlist.pacnew ]] && rm -f /etc/pacman.d/mirrorlist.pacnew"
