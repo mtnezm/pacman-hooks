@@ -10,4 +10,4 @@ When = PostTransaction
 Depends = curl
 Depends = openssl
 Depends = arch-audit
-Exec = /usr/bin/arch-audit --color always --upgradable --quiet
+Exec = /usr/bin/arch-audit --color always --upgradable --quiet -c -r
